@@ -1,6 +1,7 @@
 # Schedule I Plugin Project Template
 
-A customizable project template for building **Schedule I plugins** using either **BepInEx** or **MelonLoader** modding frameworks. Built with flexibility for Unity integration, this template provides a clean starting point for mod developers targeting Schedule I games.
+A customizable project template for building **Schedule I plugins** using either **BepInEx** or **MelonLoader** modding frameworks.
+Built with flexibility for Unity integration, this template provides a clean starting point for mod developers targeting Schedule I game.
 
 ---
 
