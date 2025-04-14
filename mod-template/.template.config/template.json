@@ -1,0 +1,81 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "MaxtorCoder",
+    "classifications": [ "Unity", "Mono", "MelonLoader", "BepInEx" ],
+    "name": "Schedule I Plugin Project Template",
+    "identity": "MaxtorCoder.ScheduleIPluginProjectTemplate",
+    "shortName": "s1_plugin",
+    "sourceName": "MyMod",
+    "preferNameDirectory": true,
+    "tags": {
+        "language": "C#",
+        "type": "project"
+    },
+    "symbols": {
+        "modloader": {
+            "type": "parameter",
+            "dataType": "choice",
+            "isRequired": true,
+            "description": "The mod loader to use.",
+            "choices": [
+                {
+                    "choice": "BepInEx",
+                    "description": "BepInEx modding framework"
+                },
+                {
+                    "choice": "MelonLoader",
+                    "description": "MelonLoader modding framework"
+                }
+            ]
+        },
+        "gameroot": {
+            "type": "parameter",
+            "dataType": "string",
+            "isRequired": true,
+            "description": "The path to the Schedule I root folder.",
+            "replaces": "SCHEDULE_ONE_ROOT_PLACEHOLDER"
+        },
+        "unityroot": {
+            "type": "parameter",
+            "dataType": "string",
+            "defaultValue": "",
+            "description": "The path to the Unity project root folder. Leave empty to exclude Unity Scripts project.",
+            "replaces": "UNITY_ROOT_PLACEHOLDER"
+        },
+        "includeScripts": {
+            "type": "computed",
+            "value": "(unityroot != \"\")"
+        },
+        "useMelonLoader": {
+            "type": "computed",
+            "value": "(modloader == 'melonloader')"
+        },
+        "useBepInEx": {
+            "type": "computed",
+            "value": "(modloader == 'bepinex')"
+        }
+    },
+    "sources": [
+        {
+            "source": "Tools/",
+            "target": "Tools/",
+            "include": ["**/*"]
+        },
+        {
+            "source": "Common/",
+            "target": "./",
+            "include": ["MyMod.sln", "**/*.md", "Directory.Build.props"]
+        },
+        {
+            "source": "MyMod",
+            "target":"./MyMod",
+            "include": ["**/*"]
+        },
+        {
+            "source": "MyMod.Scripts",
+            "condition": "(includeScripts)",
+            "target":"./MyMod.Scripts",
+            "include": ["**/*"]
+        }
+    ]
+} 

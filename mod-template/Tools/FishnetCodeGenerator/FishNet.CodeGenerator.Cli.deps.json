@@ -1,0 +1,160 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "FishNet.CodeGenerator.Cli/1.0.0": {
+        "dependencies": {
+          "CommandLineParser": "2.9.1",
+          "FishNet.CodeGenerator": "1.0.0"
+        },
+        "runtime": {
+          "FishNet.CodeGenerator.Cli.dll": {}
+        }
+      },
+      "CommandLineParser/2.9.1": {
+        "runtime": {
+          "lib/netstandard2.0/CommandLine.dll": {
+            "assemblyVersion": "2.9.1.0",
+            "fileVersion": "2.9.1.0"
+          }
+        }
+      },
+      "Mono.Cecil/0.11.6": {
+        "runtime": {
+          "lib/netstandard2.0/Mono.Cecil.Mdb.dll": {
+            "assemblyVersion": "0.11.6.0",
+            "fileVersion": "0.11.6.0"
+          },
+          "lib/netstandard2.0/Mono.Cecil.Pdb.dll": {
+            "assemblyVersion": "0.11.6.0",
+            "fileVersion": "0.11.6.0"
+          },
+          "lib/netstandard2.0/Mono.Cecil.Rocks.dll": {
+            "assemblyVersion": "0.11.6.0",
+            "fileVersion": "0.11.6.0"
+          },
+          "lib/netstandard2.0/Mono.Cecil.dll": {
+            "assemblyVersion": "0.11.6.0",
+            "fileVersion": "0.11.6.0"
+          }
+        }
+      },
+      "UnityEngine.Modules/2022.3.32": {},
+      "FishNet.CodeGenerating/1.0.0": {
+        "dependencies": {
+          "FishNet.Runtime": "1.0.0",
+          "Mono.Cecil": "0.11.6",
+          "Unity.CompilationPipeline.Common": "1.0.0",
+          "UnityEngine.Modules": "2022.3.32"
+        },
+        "runtime": {
+          "FishNet.CodeGenerating.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "FishNet.CodeGenerator/1.0.0": {
+        "dependencies": {
+          "FishNet.CodeGenerating": "1.0.0",
+          "Mono.Cecil": "0.11.6",
+          "Unity.CompilationPipeline.Common": "1.0.0"
+        },
+        "runtime": {
+          "FishNet.CodeGenerator.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "FishNet.Runtime/1.0.0": {
+        "dependencies": {
+          "GameKit.Dependencies": "1.0.0",
+          "UnityEngine.Modules": "2022.3.32"
+        },
+        "runtime": {
+          "FishNet.Runtime.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "GameKit.Dependencies/1.0.0": {
+        "dependencies": {
+          "UnityEngine.Modules": "2022.3.32"
+        },
+        "runtime": {
+          "GameKit.Dependencies.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Unity.CompilationPipeline.Common/1.0.0": {
+        "runtime": {
+          "Unity.CompilationPipeline.Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FishNet.CodeGenerator.Cli/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CommandLineParser/2.9.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OE0sl1/sQ37bjVsPKKtwQlWDgqaxWgtme3xZz7JssWUzg5JpMIyHgCTY9MVMxOg48fJ1AgGT3tgdH5m/kQ5xhA==",
+      "path": "commandlineparser/2.9.1",
+      "hashPath": "commandlineparser.2.9.1.nupkg.sha512"
+    },
+    "Mono.Cecil/0.11.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-f33RkDtZO8VlGXCtmQIviOtxgnUdym9xx/b1p9h91CRGOsJFxCFOFK1FDbVt1OCf1aWwYejUFa2MOQyFWTFjbA==",
+      "path": "mono.cecil/0.11.6",
+      "hashPath": "mono.cecil.0.11.6.nupkg.sha512"
+    },
+    "UnityEngine.Modules/2022.3.32": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-csmBi63esJmW5tk+Xe06htGR/PHtkBAV+RnAwt4CSuxGbHlI2tErsvOAYLXuiqHzeI5h31h4LV7RU3G99GWC0w==",
+      "path": "unityengine.modules/2022.3.32",
+      "hashPath": "unityengine.modules.2022.3.32.nupkg.sha512"
+    },
+    "FishNet.CodeGenerating/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FishNet.CodeGenerator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "FishNet.Runtime/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GameKit.Dependencies/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Unity.CompilationPipeline.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

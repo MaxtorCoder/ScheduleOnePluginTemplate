@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <Reference Include="$(ManagedFolder)\Assembly-CSharp.dll" Publicize="true" Private="false" />
+    <Reference Include="$(ManagedFolder)\UnityEngine.CoreModule.dll" Private="false" />
+    <Reference Include="$(ManagedFolder)\UnityEngine.InputLegacyModule.dll" Private="false" />
+    <Reference Include="$(ManagedFolder)\UnityEngine.AudioModule.dll" Private="false" />
+    <Reference Include="$(ManagedFolder)\FishNet.Runtime.dll" Publicize="true" Private="false" />
+    <Reference Include="$(ManagedFolder)\Unity.TextMeshPro.dll" Private="false" />
+    <Reference Include="$(ManagedFolder)\UnityEngine.UI.dll" Private="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.5.0-beta.1" PrivateAssets="all" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <CopyToUnityFolder Include="$(TargetDir)\$(ProjectName).dll" />
+  </ItemGroup>
+
+  <Target Name="CopyToUnityFolder" AfterTargets="PostBuildEvent" Condition="'$(CI)' == ''" Outputs="$(UnityFolder)">
+    <PropertyGroup>
+      <Destination>$(UnityFolder)</Destination>
+    </PropertyGroup>
+    <Message Importance="high" Text="Copying files to unity folder: $(Destination)" />
+    <Copy SourceFiles="@(CopyToUnityFolder)" DestinationFiles="@(CopyToUnityFolder->'$(Destination)\%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
+
+  <Target Name="PostBuild" AfterTargets="CopyToUnityFolder">
+    <Exec Command="&quot;$(SolutionDir)Tools\FishnetCodeGenerator\FishNet.CodeGenerator.Cli.exe&quot; -o &quot;$(PluginFolder)\$(SolutionName)\$(ProjectName).dll&quot; -i &quot;$(TargetPath)&quot; -a @(DepFolders->'&quot;%(Identity)&quot;', ' ')" />
+  </Target>
+</Project>

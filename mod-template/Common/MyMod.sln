@@ -1,0 +1,34 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34814.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{07FF251F-B472-40D0-B0A7-396B1D56B158}") = "MyMod", "MyMod/MyMod.csproj", "{8AB3463E-7150-4EE5-9CBE-26D1E05B2F3B}"
+EndProject
+#if(includeScripts)
+Project("{07FF251F-B472-40D0-B0A7-396B1D56B158}") = "MyMod.Scripts", "MyMod.Scripts/MyMod.Scripts.csproj", "{DD138154-E3C2-4931-BC43-6D23C3C9B3CD}"
+EndProject
+#endif
+Global
+    GlobalSection(SolutionConfigurationPlatforms) = preSolution
+        Debug|Any CPU = Debug|Any CPU
+        Release|Any CPU = Release|Any CPU
+    EndGlobalSection
+    GlobalSection(ProjectConfigurationPlatforms) = postSolution
+        {8AB3463E-7150-4EE5-9CBE-26D1E05B2F3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {8AB3463E-7150-4EE5-9CBE-26D1E05B2F3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {8AB3463E-7150-4EE5-9CBE-26D1E05B2F3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {8AB3463E-7150-4EE5-9CBE-26D1E05B2F3B}.Release|Any CPU.Build.0 = Release|Any CPU
+        #if(includeScripts)
+        {DD138154-E3C2-4931-BC43-6D23C3C9B3CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+        {DD138154-E3C2-4931-BC43-6D23C3C9B3CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+        {DD138154-E3C2-4931-BC43-6D23C3C9B3CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+        {DD138154-E3C2-4931-BC43-6D23C3C9B3CD}.Release|Any CPU.Build.0 = Release|Any CPU
+        #endif
+    EndGlobalSection
+    GlobalSection(SolutionProperties) = preSolution
+        HideSolutionNode = FALSE
+    EndGlobalSection
+    GlobalSection(ExtensibilityGlobals) = postSolution
+        SolutionGuid = {034D5370-A035-4414-BA60-BF6D1D00C251}
+    EndGlobalSection
+EndGlobal

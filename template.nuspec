@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>MaxtorCoder.ScheduleIPluginProjectTemplate</id>
+    <version>1.0.0</version>
+    <description>A template for creating Schedule I plugins using BepInEx or MelonLoader</description>
+    <authors>MaxtorCoder</authors>
+    <readme>readme.md</readme>
+    <projectUrl>https://github.com/MaxtorCoder/ScheduleOnePluginTemplate</projectUrl>
+    <packageTypes>
+      <packageType name="Template" />
+    </packageTypes>
+    <license type="expression">MIT</license>
+  </metadata>
+  <files>
+    <file src="**" exclude="**\bin\**;**\obj\**;**\.vs\**;**\.git\**;*.nupkg;**\.idea\**" target="content" />
+    <file src="readme.md" target="./" />
+  </files>
+</package>
