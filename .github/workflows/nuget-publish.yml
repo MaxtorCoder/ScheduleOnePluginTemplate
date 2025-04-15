@@ -6,17 +6,20 @@ on:
       - master
 
 jobs:
-  build:
+  pack-and-publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Publish NuGet package
+        uses: nuget/setup-nuget@v2.0.1
+        with:
+          nuget-api-key: ${{ secrets.NUGET_API_KEY }}
+          nuget-version: 'latest'
+
       - name: Pack project
         run: nuget pack .\template.nuspec -OutputDirectory ./nupkgs -Properties Configuration=Release
-
-      - name: Publish NuGet package
-        run: dotnet nuget push ./nupkgs/*.nupkg --source https://api.nuget.org/v3/index.json --api-key $NUGET_API_KEY
-        env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-        shell: bash
+        
+      - name: Publish project
+        run: dotnet nuget push ./nupkgs/*.nupkg
