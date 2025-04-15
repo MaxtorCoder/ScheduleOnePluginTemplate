@@ -57,11 +57,6 @@
     },
     "sources": [
         {
-            "source": "Tools/",
-            "target": "Tools/",
-            "include": ["**/*"]
-        },
-        {
             "source": "Common/",
             "target": "./",
             "include": ["MyMod.sln", "**/*.md", "Directory.Build.props"]
