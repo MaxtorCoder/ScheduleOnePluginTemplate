@@ -12,17 +12,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v1
-        with:
-            dotnet-version: '6.0.x'
-
-      - name: Restore dependencies
-        run: dotnet restore
-
-      - name: Build project
-        run: dotnet build --configuration Release
-
       - name: Pack project
         run: nuget pack .\template.nuspec -OutputDirectory ./nupkgs -Properties Configuration=Release
 
