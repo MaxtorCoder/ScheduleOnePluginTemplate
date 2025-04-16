@@ -48,7 +48,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <CopyToPluginFolder Include="$(TargetDir)\$(ProjectName).dll" <CopyToPluginFolder Include="$(TargetDir)\$(ProjectName).dll"/>/>
+    <CopyToPluginFolder Include="$(TargetDir)\$(ProjectName).dll" />
   </ItemGroup>
 
   <Target Name="CopyToPluginFolder" AfterTargets="PostBuildEvent" Condition="'$(CI)' == ''" Outputs="$(PluginFolder)">
