@@ -56,7 +56,11 @@
       <Destination>$(PluginFolder)</Destination>
     </PropertyGroup>
     <Message Importance="high" Text="Copying files to plugin folder: $(Destination)"/>
+    <!--#if (useBepInEx) -->
     <Copy SourceFiles="@(CopyToPluginFolder)" DestinationFiles="@(CopyToPluginFolder->'$(Destination)\$(ProjectName)\%(RecursiveDir)%(Filename)%(Extension)')"/>
+    <!--#elseif (useMelonLoader)-->
+    <Copy SourceFiles="@(CopyToPluginFolder)" DestinationFiles="@(CopyToPluginFolder->'$(Destination)\%(RecursiveDir)%(Filename)%(Extension)')"/>
+    <!--#endif-->
   </Target>
 
 </Project>
