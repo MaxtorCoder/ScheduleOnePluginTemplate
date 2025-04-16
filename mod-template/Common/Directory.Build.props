@@ -12,19 +12,10 @@
     <!--#elseif (useBepInEx)-->
     <PluginRoot>$(ScheduleOneRoot)\BepInEx\plugins</PluginRoot>
     <!--#endif-->
-    <MangedDataRoot>$(ScheduleOneRoot)\Schedule I_Data\Managed</MangedDataRoot>
+    <ManagedDataRoot>$(ScheduleOneRoot)\Schedule I_Data\Managed</ManagedDataRoot>
     
     <!--#if (includeScripts)-->
     <UnityProjectRoot>UNITY_ROOT_PLACEHOLDER</UnityProjectRoot>
     <!--#endif-->
   </PropertyGroup>
-  <ItemGroup>
-    <DepFolders Include="C:\Program Files\Unity\Hub\Editor\2022.3.32f1\Editor\Data\Managed\UnityEngine" />
-    <DepFolders Include="$(ManagedFolder)" />
-    <!--#if (useMelonLoader)-->
-    <DepFolders Include="$(ScheduleOneRoot)\MelonLoader\net35" />
-    <!--#elseif (useBepInEx)-->
-    <DepFolders Include="$(ScheduleOneRoot)\BepInEx\core" />
-    <!--#endif-->
-  </ItemGroup>
 </Project>
