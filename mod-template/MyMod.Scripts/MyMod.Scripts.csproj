@@ -16,6 +16,9 @@
 
   <ItemGroup>
     <CopyToUnityFolder Include="$(TargetDir)\$(ProjectName).dll" />
+    <!--#if (useMelonLoader) -->
+    <CopyToPluginFolder Include="$(TargetDir)\$(ProjectName).dll" />
+    <!--#endif-->
   </ItemGroup>
 
   <Target Name="CopyToUnityFolder" AfterTargets="PostBuildEvent" Condition="'$(CI)' == ''" Outputs="$(UnityFolder)">
@@ -25,4 +28,14 @@
     <Message Importance="high" Text="Copying files to unity folder: $(Destination)" />
     <Copy SourceFiles="@(CopyToUnityFolder)" DestinationFiles="@(CopyToUnityFolder->'$(Destination)\%(RecursiveDir)%(Filename)%(Extension)')" />
   </Target>
+  <!--#if (useMelonLoader) -->
+
+  <Target Name="CopyToPluginFolder" AfterTargets="PostBuildEvent" Condition="'$(CI)' == ''" Outputs="$(PluginFolder)">
+    <PropertyGroup>
+      <Destination>$(PluginFolder)</Destination>
+    </PropertyGroup>
+    <Message Importance="high" Text="Copying files to plugin folder: $(Destination)"/>
+    <Copy SourceFiles="@(CopyToPluginFolder)" DestinationFiles="@(CopyToPluginFolder->'$(Destination)\%(RecursiveDir)%(Filename)%(Extension)')"/>
+  </Target>
+  <!--#endif-->
 </Project>
