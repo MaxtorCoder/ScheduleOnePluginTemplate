@@ -4,6 +4,7 @@
     <RootNamespace>MyMod</RootNamespace>
     <Product>MyMod</Product>
     <Version>1.0.0</Version>
+    <LangVersion>latest</LangVersion>
     <!--#if (useBepInEx) -->
     <RestoreAdditionalProjectSources>
       https://api.nuget.org/v3/index.json;
@@ -37,8 +38,8 @@
     <PackageReference Include="BepInEx.Analyzers" Version="1.*" PrivateAssets="all"/>
     <PackageReference Include="BepInEx.Unity.Mono" Version="6.0.0-be.*" IncludeAssets="compile"/>
     <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*"/>
-    <PackageReference Include="UnityEngine.Modules" Version="2022.3.32" IncludeAssets="compile"/>
     <!--#endif-->
+    <PackageReference Include="UnityEngine.Modules" Version="2022.3.32" IncludeAssets="compile"/>
     <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.5.0-beta.1" PrivateAssets="all" />
   </ItemGroup>
 

@@ -11,8 +11,13 @@
 
   <ItemGroup>
     <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.5.0-beta.1" PrivateAssets="all" />
-    <PackageReference Include="FishNetV3.CodeGenerator.MSBuild" Version="1.0.0-beta.5" PrivateAssets="all" ExcludeAssets="runtime" />
+    <PackageReference Include="FishNetV3.CodeGenerator.MSBuild" Version="1.0.0-beta.8" PrivateAssets="all" ExcludeAssets="runtime" />
   </ItemGroup>
+
+  <PropertyGroup>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
 
   <ItemGroup>
     <CopyToUnityFolder Include="$(TargetDir)\$(ProjectName).dll" />
