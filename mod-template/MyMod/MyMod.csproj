@@ -51,9 +51,9 @@
     <CopyToPluginFolder Include="$(TargetDir)\$(ProjectName).dll" />
   </ItemGroup>
 
-  <Target Name="CopyToPluginFolder" AfterTargets="PostBuildEvent" Condition="'$(CI)' == ''" Outputs="$(PluginFolder)">
+  <Target Name="CopyToPluginFolder" AfterTargets="PostBuildEvent" Condition="'$(CI)' == ''" Outputs="$(PluginRoot)">
     <PropertyGroup>
-      <Destination>$(PluginFolder)</Destination>
+      <Destination>$(PluginRoot)</Destination>
     </PropertyGroup>
     <Message Importance="high" Text="Copying files to plugin folder: $(Destination)"/>
     <!--#if (useBepInEx) -->

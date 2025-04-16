@@ -30,9 +30,9 @@
   </Target>
   <!--#if (useMelonLoader) -->
 
-  <Target Name="CopyToPluginFolder" AfterTargets="PostBuildEvent" Condition="'$(CI)' == ''" Outputs="$(PluginFolder)">
+  <Target Name="CopyToPluginFolder" AfterTargets="PostBuildEvent" Condition="'$(CI)' == ''" Outputs="$(PluginRoot)">
     <PropertyGroup>
-      <Destination>$(PluginFolder)</Destination>
+      <Destination>$(PluginRoot)</Destination>
     </PropertyGroup>
     <Message Importance="high" Text="Copying files to plugin folder: $(Destination)"/>
     <Copy SourceFiles="@(CopyToPluginFolder)" DestinationFiles="@(CopyToPluginFolder->'$(Destination)\%(RecursiveDir)%(Filename)%(Extension)')"/>
