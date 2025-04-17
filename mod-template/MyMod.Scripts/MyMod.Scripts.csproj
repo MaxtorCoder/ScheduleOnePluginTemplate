@@ -28,9 +28,9 @@
     <!--#endif-->
   </ItemGroup>
 
-  <Target Name="CopyToUnityFolder" AfterTargets="PostBuildEvent" Condition="'$(CI)' == ''" Outputs="$(UnityFolder)">
+  <Target Name="CopyToUnityFolder" AfterTargets="PostBuildEvent" Condition="'$(CI)' == ''" Outputs="$(UnityProjectRoot)">
     <PropertyGroup>
-      <Destination>$(UnityFolder)\Assets\Plugins\Modding</Destination>
+      <Destination>$(UnityProjectRoot)\Assets\Plugins\Modding</Destination>
     </PropertyGroup>
     <Message Importance="high" Text="Copying files to unity folder: $(Destination)" />
     <Copy SourceFiles="@(CopyToUnityFolder)" DestinationFiles="@(CopyToUnityFolder->'$(Destination)\%(RecursiveDir)%(Filename)%(Extension)')" />
