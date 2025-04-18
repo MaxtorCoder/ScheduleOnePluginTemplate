@@ -10,19 +10,29 @@ EndProject
 #endif
 Global
     GlobalSection(SolutionConfigurationPlatforms) = preSolution
-        Debug|Any CPU = Debug|Any CPU
-        Release|Any CPU = Release|Any CPU
+        DebugMelon|Any CPU = DebugMelon|Any CPU
+        ReleaseMelon|Any CPU = ReleaseMelon|Any CPU
+        DebugBepInEx|Any CPU = DebugBepInEx|Any CPU
+        ReleaseBepInEx|Any CPU = ReleaseBepInEx|Any CPU
     EndGlobalSection
     GlobalSection(ProjectConfigurationPlatforms) = postSolution
-        {8AB3463E-7150-4EE5-9CBE-26D1E05B2F3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-        {8AB3463E-7150-4EE5-9CBE-26D1E05B2F3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-        {8AB3463E-7150-4EE5-9CBE-26D1E05B2F3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-        {8AB3463E-7150-4EE5-9CBE-26D1E05B2F3B}.Release|Any CPU.Build.0 = Release|Any CPU
+        {8AB3463E-7150-4EE5-9CBE-26D1E05B2F3B}.DebugMelon|Any CPU.ActiveCfg = DebugMelon|Any CPU
+        {8AB3463E-7150-4EE5-9CBE-26D1E05B2F3B}.DebugMelon|Any CPU.Build.0 = DebugMelon|Any CPU
+        {8AB3463E-7150-4EE5-9CBE-26D1E05B2F3B}.ReleaseMelon|Any CPU.ActiveCfg = ReleaseMelon|Any CPU
+        {8AB3463E-7150-4EE5-9CBE-26D1E05B2F3B}.ReleaseMelon|Any CPU.Build.0 = ReleaseMelon|Any CPU
+        {8AB3463E-7150-4EE5-9CBE-26D1E05B2F3B}.DebugBepInEx|Any CPU.ActiveCfg = DebugBepInEx|Any CPU
+        {8AB3463E-7150-4EE5-9CBE-26D1E05B2F3B}.DebugBepInEx|Any CPU.Build.0 = DebugBepInEx|Any CPU
+        {8AB3463E-7150-4EE5-9CBE-26D1E05B2F3B}.ReleaseBepInEx|Any CPU.ActiveCfg = ReleaseBepInEx|Any CPU
+        {8AB3463E-7150-4EE5-9CBE-26D1E05B2F3B}.ReleaseBepInEx|Any CPU.Build.0 = ReleaseBepInEx|Any CPU
         #if(includeScripts)
-        {DD138154-E3C2-4931-BC43-6D23C3C9B3CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-        {DD138154-E3C2-4931-BC43-6D23C3C9B3CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-        {DD138154-E3C2-4931-BC43-6D23C3C9B3CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-        {DD138154-E3C2-4931-BC43-6D23C3C9B3CD}.Release|Any CPU.Build.0 = Release|Any CPU
+        {DD138154-E3C2-4931-BC43-6D23C3C9B3CD}.DebugMelon|Any CPU.ActiveCfg = DebugMelon|Any CPU
+        {DD138154-E3C2-4931-BC43-6D23C3C9B3CD}.DebugMelon|Any CPU.Build.0 = DebugMelon|Any CPU
+        {DD138154-E3C2-4931-BC43-6D23C3C9B3CD}.ReleaseMelon|Any CPU.ActiveCfg = ReleaseMelon|Any CPU
+        {DD138154-E3C2-4931-BC43-6D23C3C9B3CD}.ReleaseMelon|Any CPU.Build.0 = ReleaseMelon|Any CPU
+        {DD138154-E3C2-4931-BC43-6D23C3C9B3CD}.DebugBepInEx|Any CPU.ActiveCfg = DebugBepInEx|Any CPU
+        {DD138154-E3C2-4931-BC43-6D23C3C9B3CD}.DebugBepInEx|Any CPU.Build.0 = DebugBepInEx|Any CPU
+        {DD138154-E3C2-4931-BC43-6D23C3C9B3CD}.ReleaseBepInEx|Any CPU.ActiveCfg = ReleaseBepInEx|Any CPU
+        {DD138154-E3C2-4931-BC43-6D23C3C9B3CD}.ReleaseBepInEx|Any CPU.Build.0 = ReleaseBepInEx|Any CPU
         #endif
     EndGlobalSection
     GlobalSection(SolutionProperties) = preSolution

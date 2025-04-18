@@ -5,17 +5,46 @@
     <IsPackable>false</IsPackable>
     <Nullable>disable</Nullable>
 
+    <DefineConstants>$(DefineConstants);$(Platform)</DefineConstants>
+    <Configurations>DebugMelon;DebugBepInEx;ReleaseMelon;ReleaseBepInEx</Configurations>
+
     <ScheduleOneRoot>SCHEDULE_ONE_ROOT_PLACEHOLDER</ScheduleOneRoot>
 
-    <!--#if (useMelonLoader)-->
-    <PluginRoot>$(ScheduleOneRoot)\Mods</PluginRoot>
-    <!--#elseif (useBepInEx)-->
-    <PluginRoot>$(ScheduleOneRoot)\BepInEx\plugins</PluginRoot>
-    <!--#endif-->
+    <PluginRoot Condition="'$(Configuration)'=='DebugMelon'">$(ScheduleOneRoot)\Mods</PluginRoot>
+    <PluginRoot Condition="'$(Configuration)'=='DebugBepInEx'">$(ScheduleOneRoot)\BepInEx\plugins</PluginRoot>
+
     <ManagedDataRoot>$(ScheduleOneRoot)\Schedule I_Data\Managed</ManagedDataRoot>
-    
     <!--#if (includeScripts)-->
+    
     <UnityProjectRoot>UNITY_ROOT_PLACEHOLDER</UnityProjectRoot>
     <!--#endif-->
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='DebugMelon'">
+    <DefineConstants>$(DefineConstants);$(Platform);USEMELONLOADER</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='DebugBepInEx'">
+    <DefineConstants>$(DefineConstants);$(Platform);USEBEPINEX</DefineConstants>
+  </PropertyGroup>
+
+  <Target Name="CopyToPluginFolder" AfterTargets="PostBuildEvent">
+    <PropertyGroup>
+      <Destination>$(PluginRoot)</Destination>
+    </PropertyGroup>
+    <Message Importance="high" Text="Copying files to plugin folder: $(Destination)"/>
+    <Copy SourceFiles="@(CopyToPluginFolder)" DestinationFiles="@(CopyToPluginFolder->'$(Destination)\$(SolutionName)\%(RecursiveDir)%(Filename)%(Extension)')" Condition="'$(Configuration)'=='DebugBepInEx'"/>
+    <Copy SourceFiles="@(CopyToPluginFolder)" DestinationFiles="@(CopyToPluginFolder->'$(Destination)\%(RecursiveDir)%(Filename)%(Extension)')" Condition="'$(Configuration)'=='DebugMelon'"/>
+  </Target>
+  <!--#if (includeScripts)-->
+
+  <Target Name="CopyToUnityFolder" AfterTargets="PostBuildEvent">
+    <PropertyGroup>
+      <Destination>$(UnityProjectRoot)\Assets\Plugins\Modding</Destination>
+    </PropertyGroup>
+    <Message Importance="high" Text="Copying files to unity folder: $(Destination)" />
+    <Copy SourceFiles="@(CopyToUnityFolder)" DestinationFiles="@(CopyToUnityFolder->'$(Destination)\%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
+  <!--#endif-->
+
 </Project>

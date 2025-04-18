@@ -1,13 +1,12 @@
 # Schedule I Plugin Project Template
 
-A customizable project template for building **Schedule I plugins** using either **BepInEx** or **MelonLoader** modding frameworks.
-Built with flexibility for Unity integration, this template provides a clean starting point for mod developers targeting Schedule I game.
+A customizable project template for building **Schedule I plugins** using both **BepInEx** and **MelonLoader** modding frameworks, adding easy integration for Unity as well to create custom asset bundles.
 
 ---
 
 ## Features
-- **Mod Loader Support**: Easily switch between BepInEx and MelonLoader
-- **Unity Integration**: Optional support for Unity script projects
+- **Mod Loader Support**: Easily switch between BepInEx and MelonLoader through Build Configurations (change your Schedule 1 root accordingly to load files)
+- **Unity Integration**: Optional support for Unity script projects to create asset bundles
 ---
 
 ## Usage
@@ -26,8 +25,7 @@ dotnet new install MaxtorCoder.ScheduleIPluginProjectTemplate
 ### Creating a New Project
 
 ```bash
-dotnet new s1_plugin \
-  --modloader BepInEx \
+dotnet new s1_plugin -n "ModName" \
   --gameroot "C:/Path/To/ScheduleIGame" \
   --unityroot "C:/Path/To/UnityProject" # optional
 ```
@@ -35,17 +33,8 @@ dotnet new s1_plugin \
 ### Parameters
 | Name         | Required | Description                                                  |
 |--------------|----------|--------------------------------------------------------------|
-| `modloader`  | Yes      | Modding framework to use (`BepInEx` or `MelonLoader`)        |
 | `gameroot`   | Yes      | Path to the Schedule I game root folder                      |
 | `unityroot`  | No       | Path to Unity project root (include Unity scripts if filled) |
-
----
-
-## Template Metadata
-- **Template Name**: Schedule I Plugin Project Template
-- **Short Name**: `s1_plugin`
-- **Author**: MaxtorCoder
-- **Tags**: `project`, `C#`, `Unity`, `Mono`, `MelonLoader`, `BepInEx`
 
 ---
 

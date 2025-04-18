@@ -1,49 +1,57 @@
-#if (useMelonLoader)
+//-:cnd:noEmit
+#if USEMELONLOADER
 using MelonLoader;
-#elseif (useBepInEx)
+#elif USEBEPINEX
 using BepInEx;
-using BepInEx.Logging;
 using BepInEx.Unity.Mono;
 
 using HarmonyLib;
 #endif
+//+:cnd:noEmit
 
-#if (useBepInEx)
+using MyMod.Logging;
+
+//-:cnd:noEmit
+#if USEBEPINEX
+//+:cnd:noEmit
 namespace MyMod;
 #endif
 
-#if (useMelonLoader)
+//-:cnd:noEmit
+#if USEMELONLOADER
+//+:cnd:noEmit
 [assembly: MelonInfo(typeof(MyMod.Core), "MyMod", "1.0.0", "CompanyName")]
 [assembly: MelonGame("TVGS", "Schedule I")]
 namespace MyMod;
 
-#elseif (useBepInEx)
+//-:cnd:noEmit
+#elif USEBEPINEX
 [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
 #endif
-#if (useMelonLoader)
+#if USEMELONLOADER
 public class Core : MelonMod
-#elseif (useBepInEx)
+#elif USEBEPINEX
 public class Core : BaseUnityPlugin
 #endif
 {
-    #if (useBepInEx)
-    internal new static ManualLogSource Logger;
-    #endif
-
-    #if (useMelonLoader)
+#if USEMELONLOADER
     public override void OnInitializeMelon()
+#elif USEBEPINEX
+    private void Awake()
+#endif
     {
-        LoggerInstance.Msg("Initialized.");
-    }
-    #elseif (useBepInEx)
-    void Awake()
-    {
-        // Plugin startup logic
-        Logger = base.Logger;
-        Logger.LogInfo($"Plugin {MyPluginInfo.PLUGIN_NAME} is loaded!");
+#if USEBEPINEX
+        Log.Logger = Logger;
+#endif
+//+:cnd:noEmit
 
+        Log.LogInfo("Initializing MyMod...");
+
+//-:cnd:noEmit
+#if USEBEPINEX
         new Harmony($"com.CompanyName.{MyPluginInfo.PLUGIN_NAME}")
             .PatchAll();
+#endif
     }
-    #endif
 }
+//+:cnd:noEmit

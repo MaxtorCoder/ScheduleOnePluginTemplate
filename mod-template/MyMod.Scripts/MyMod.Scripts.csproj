@@ -18,31 +18,11 @@
   <ItemGroup>
     <PackageReference Include="UnityEngine.Modules" Version="2022.3.32" IncludeAssets="compile"/>
     <PackageReference Include="BepInEx.AssemblyPublicizer.MSBuild" Version="0.5.0-beta.1" PrivateAssets="all" />
-    <PackageReference Include="FishNetV3.CodeGenerator.MSBuild" Version="1.0.0-beta.8" PrivateAssets="all" ExcludeAssets="runtime" />
+    <PackageReference Include="FishNetV3.CodeGenerator.MSBuild" Version="1.0.0-beta.9" PrivateAssets="all" ExcludeAssets="runtime" />
   </ItemGroup>
 
   <ItemGroup>
     <CopyToUnityFolder Include="$(TargetDir)\$(ProjectName).dll" />
-    <!--#if (useMelonLoader) -->
     <CopyToPluginFolder Include="$(TargetDir)\$(ProjectName).dll" />
-    <!--#endif-->
   </ItemGroup>
-
-  <Target Name="CopyToUnityFolder" AfterTargets="PostBuildEvent" Condition="'$(CI)' == ''" Outputs="$(UnityProjectRoot)">
-    <PropertyGroup>
-      <Destination>$(UnityProjectRoot)\Assets\Plugins\Modding</Destination>
-    </PropertyGroup>
-    <Message Importance="high" Text="Copying files to unity folder: $(Destination)" />
-    <Copy SourceFiles="@(CopyToUnityFolder)" DestinationFiles="@(CopyToUnityFolder->'$(Destination)\%(RecursiveDir)%(Filename)%(Extension)')" />
-  </Target>
-  <!--#if (useMelonLoader) -->
-
-  <Target Name="CopyToPluginFolder" AfterTargets="PostBuildEvent" Condition="'$(CI)' == ''" Outputs="$(PluginRoot)">
-    <PropertyGroup>
-      <Destination>$(PluginRoot)</Destination>
-    </PropertyGroup>
-    <Message Importance="high" Text="Copying files to plugin folder: $(Destination)"/>
-    <Copy SourceFiles="@(CopyToPluginFolder)" DestinationFiles="@(CopyToPluginFolder->'$(Destination)\%(RecursiveDir)%(Filename)%(Extension)')"/>
-  </Target>
-  <!--#endif-->
 </Project>

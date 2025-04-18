@@ -12,22 +12,6 @@
         "type": "project"
     },
     "symbols": {
-        "modloader": {
-            "type": "parameter",
-            "dataType": "choice",
-            "isRequired": true,
-            "description": "The mod loader to use.",
-            "choices": [
-                {
-                    "choice": "BepInEx",
-                    "description": "BepInEx modding framework"
-                },
-                {
-                    "choice": "MelonLoader",
-                    "description": "MelonLoader modding framework"
-                }
-            ]
-        },
         "gameroot": {
             "type": "parameter",
             "dataType": "string",
@@ -45,14 +29,6 @@
         "includeScripts": {
             "type": "computed",
             "value": "(unityroot != \"\")"
-        },
-        "useMelonLoader": {
-            "type": "computed",
-            "value": "(modloader == 'melonloader')"
-        },
-        "useBepInEx": {
-            "type": "computed",
-            "value": "(modloader == 'bepinex')"
         }
     },
     "sources": [

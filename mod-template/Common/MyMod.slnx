@@ -1,6 +1,0 @@
-<Solution>
-  <Project Path="MyMod/MyMod.csproj Type="Classic C#" />
-  <!--#if (includeScripts)-->
-  <Project Path="MyMod.Scripts/MyMod.Scripts.csproj" Type="Classic C#" /> 
-  <!-- endif-->
-</Solution>
