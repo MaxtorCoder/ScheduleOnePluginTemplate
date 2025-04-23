@@ -3,6 +3,7 @@
   <PropertyGroup>
     <RootNamespace>MyMod.Scripts</RootNamespace>
     <AssemblyName>MyMod.Scripts</AssemblyName>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
